@@ -1,4 +1,4 @@
-package com.nativestarter;
+package com.animationtests;
 
 import android.app.Application;
 import android.util.Log;

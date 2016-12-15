@@ -18,4 +18,4 @@ global.Style_ = require('constelation-Style_')
 global.Text = require('constelation-Text')
 
 
-AppRegistry.registerComponent( 'NativeStarter', () => App )
+AppRegistry.registerComponent( 'AnimationTests', () => App )

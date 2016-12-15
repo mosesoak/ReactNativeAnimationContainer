@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "NativeStarter.app"
-               BlueprintName = "NativeStarter"
-               ReferencedContainer = "container:NativeStarter.xcodeproj">
+               BuildableName = "AnimationTests.app"
+               BlueprintName = "AnimationTests"
+               ReferencedContainer = "container:AnimationTests.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "NativeStarterTests.xctest"
-               BlueprintName = "NativeStarterTests"
-               ReferencedContainer = "container:NativeStarter.xcodeproj">
+               BuildableName = "AnimationTestsTests.xctest"
+               BlueprintName = "AnimationTestsTests"
+               ReferencedContainer = "container:AnimationTests.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "NativeStarterTests.xctest"
-               BlueprintName = "NativeStarterTests"
-               ReferencedContainer = "container:NativeStarter.xcodeproj">
+               BuildableName = "AnimationTestsTests.xctest"
+               BlueprintName = "AnimationTestsTests"
+               ReferencedContainer = "container:AnimationTests.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "NativeStarter.app"
-            BlueprintName = "NativeStarter"
-            ReferencedContainer = "container:NativeStarter.xcodeproj">
+            BuildableName = "AnimationTests.app"
+            BlueprintName = "AnimationTests"
+            ReferencedContainer = "container:AnimationTests.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "NativeStarter.app"
-            BlueprintName = "NativeStarter"
-            ReferencedContainer = "container:NativeStarter.xcodeproj">
+            BuildableName = "AnimationTests.app"
+            BlueprintName = "AnimationTests"
+            ReferencedContainer = "container:AnimationTests.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "NativeStarter.app"
-            BlueprintName = "NativeStarter"
-            ReferencedContainer = "container:NativeStarter.xcodeproj">
+            BuildableName = "AnimationTests.app"
+            BlueprintName = "AnimationTests"
+            ReferencedContainer = "container:AnimationTests.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

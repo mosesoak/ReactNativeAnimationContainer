@@ -16,7 +16,7 @@
 
 BOOL useBundle = NO; // Set YES to run pre-bundled (do `npm run bundle` from the command line first)
 
-NSString *moduleName = @"NativeStarter"; // index.ios.js -> AppRegistry.registerComponent()
+NSString *moduleName = @"AnimationTests"; // index.ios.js -> AppRegistry.registerComponent()
 
 NSString *wifiIP = nil; // no need to set this now (set only as a manual override if automation fails)
 
@@ -43,7 +43,7 @@ NSString *wifiIP = nil; // no need to set this now (set only as a manual overrid
 #endif
 
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
-                                                      moduleName:@"NativeStarter"
+                                                      moduleName:@"AnimationTests"
                                                initialProperties:nil
                                                    launchOptions:launchOptions];
   rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];

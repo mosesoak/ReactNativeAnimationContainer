@@ -6,6 +6,8 @@ import {
   TouchableOpacity,
 } from 'react-native'
 
+import ContentAnimation from './_/ContentAnimation';
+
 export default class Profile extends React.Component {
   props: {
     value: number,
@@ -27,7 +29,7 @@ export default class Profile extends React.Component {
           </Text>
         </View>
 
-        <Text center >Click 'Detail' for a threaded view</Text>
+        {/*<Text center >Click 'Detail' for a threaded view</Text>
 
         <TouchableOpacity onPress={this.props.onIncreaseCounter} >
           <View margin={10}>
@@ -38,7 +40,9 @@ export default class Profile extends React.Component {
               {this.props.value}
             </Text>
           </View>
-        </TouchableOpacity>
+        </TouchableOpacity>*/}
+
+        <ContentAnimation />
 
       </View>
     )

@@ -1,6 +1,8 @@
 // @flow
 
 import React from 'react'
+import TransitionGroup from 'lib/ReactTransitionGroup'
+
 import { Actions } from 'react-native-router-flux'
 
 import {
@@ -9,7 +11,18 @@ import {
   TouchableOpacity,
 } from 'react-native'
 
+import AnimatedLogo from './_/AnimatedLogo'
+
+/**
+
+    This class demos using ReactTransitionGroup, copied and pasted into the project from
+    https://github.com/reactjs/react-transition-group (Facebook split out the library,
+    discussion here https://github.com/facebook/react/issues/8125)
+**/
 export default class Home extends React.Component {
+  state = {
+    showLogo: true,
+  }
 
   handleShowFullScreenModal = () => {
     Actions.fullDetail()
@@ -19,14 +32,25 @@ export default class Home extends React.Component {
     Actions.fullModal()
   }
 
+  handleLogoPress = () => {
+    this.setState({
+      showLogo: false,
+    })
+  }
+
   render() {
     return (
       <View
         flex={1}
         alignHorizontal='center'
         alignVertical='center'
-      >
-        <Image style={{width: 200, height: 200}} source={require('images/logo.png')} />
+        >
+
+        <TransitionGroup>
+          {this.state.showLogo &&
+            <AnimatedLogo key='logo' onPress={this.handleLogoPress}/>
+          }
+        </TransitionGroup>
 
         <TouchableOpacity style={[styles.button, {marginTop: 60}]} onPress={this.handleShowFullScreenModal}>
           <Text color='black'>

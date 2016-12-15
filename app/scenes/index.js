@@ -9,7 +9,6 @@ import {
 import Dummy from './Dummy'
 import Home from './Home'
 import Profile from './Profile'
-import ProfileDetail from './ProfileDetail'
 import Showcase from './Showcase'
 
 const showcaseIconSource = require( 'images/icon-bonfire.png' )
@@ -47,12 +46,7 @@ export default Actions.create(
             key='profile'
             component={Profile}
             title='Profile'
-            rightTitle='Detail'
-            onRight={() => Actions.profileDetail()}
           />
-
-          <Scene key='profileDetail' component={ProfileDetail} title='Profile Detail' hideTabBar />
-
         </Scene>
 
         <Scene key='showcase' component={Showcase} title='Showcase' icon={ImageIcon} imageSource={showcaseIconSource} />

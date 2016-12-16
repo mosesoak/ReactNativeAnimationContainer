@@ -7,8 +7,6 @@ import {
   Easing,
 } from 'react-native'
 
-import View from 'constelation-View';
-
 export default class ImageComponent extends React.Component {
   static propTypes = {
     instrumentLogoAnimationStyle: PropTypes.any,

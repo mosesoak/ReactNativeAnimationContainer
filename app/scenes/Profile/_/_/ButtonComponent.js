@@ -8,8 +8,6 @@ import {
   TouchableOpacity,
 } from 'react-native'
 
-import View from 'constelation-View';
-
 export default class ButtonComponent extends React.Component {
   static propTypes = {
     buttonAnimationStyle: PropTypes.any,

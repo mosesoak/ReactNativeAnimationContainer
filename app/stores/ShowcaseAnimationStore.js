@@ -1,35 +1,13 @@
-// @flow weak
-import React, { PropTypes } from 'react'
+// @flow
+
+import {action, reaction, observable, observe, computed, autorun} from 'mobx'
+
 import {
-  StyleSheet,
-  Image,
   Animated,
   Easing,
 } from 'react-native'
 
-/*
-This can be used to check what's going over the bridge.
-Animated hasn't been upgraded for useNativeDriver: true yet in most cases, so you'll see
-lots of  "JS->N : UIManager.updateView(...)" calls in most cases.
-Leaving this here so we can double-check that piping animation styles down to
-subcomponents doesn't lead to additional inefficiency.
-
-import MessageQueue from 'MessageQueue';
-MessageQueue.spy(true);
-*/
-
-import View from 'constelation-View'
-
-import Content from './Content'
-
-// Animation wrapper around Content
-
-export default class ContentAnimation extends React.Component {
-  static propTypes = {
-  }
-
-  static defaultProps = {
-  }
+class ShowcaseAnimationStore {
 
   // raw values
 
@@ -66,16 +44,6 @@ export default class ContentAnimation extends React.Component {
     transform: [{ scale: this.animVal4 }],
   }
 
-  // triggers
-
-  componentWillMount = () => {
-    this.doIntro()
-  }
-
-  handleStartOutro = () => {
-    this.doOutro()
-  }
-
   // animations
 
   doIntro = () => {
@@ -89,19 +57,19 @@ export default class ContentAnimation extends React.Component {
     Animated.timing(this.animVal2, {
       toValue: 1,
       easing: Easing.out(Easing.quad),
-      duration: 1000,
-      delay: 600,
+      duration: 300,
+      delay: 300,
     }).start()
 
     Animated.timing(this.animVal3, {
       toValue: 1,
       easing: Easing.out(Easing.quad),
-      duration: 1000,
-      delay: 600,
+      duration: 300,
+      delay: 300,
     }).start()
 
     Animated.sequence([
-      Animated.delay(1500),
+      Animated.delay(500),
       Animated.spring(this.animVal4, {
         toValue: 1,
         velocity: 4,
@@ -124,14 +92,14 @@ export default class ContentAnimation extends React.Component {
     Animated.timing(this.animVal2, {
       toValue: 0,
       easing: Easing.in(Easing.quad),
-      duration: 1000,
+      duration: 300,
       delay: 400,
     }).start()
 
     Animated.timing(this.animVal3, {
       toValue: 2,
       easing: Easing.in(Easing.quad),
-      duration: 1000,
+      duration: 300,
       delay: 400,
     }).start()
 
@@ -139,28 +107,10 @@ export default class ContentAnimation extends React.Component {
       toValue: 0,
       easing: Easing.in(Easing.quad),
       duration: 400,
-      delay: 1200,
+      delay: 600,
     }).start()
   }
 
-  render() {
-    console.log("Content render")
-    for (let o in this) {
-      if (this[o] instanceof Animated.Value)
-      console.log(o)
-    }
-    return (
-      <View
-        flexGrow={1}
-      >
-      <Content
-        starsLogoAnimationStyle={this.starsLogoAnimationStyle}
-        starsCaptionAnimationStyle={this.starsCaptionAnimationStyle}
-        instrumentLogoAnimationStyle={this.instrumentLogoAnimationStyle}
-        buttonAnimationStyle={this.buttonAnimationStyle}
-        startOutro={this.handleStartOutro}
-        />
-      </View>
-    )
-  }
 }
+
+export default new ShowcaseAnimationStore()

@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
 } from 'react-native'
 
-import ContentAnimation from './_/ContentAnimation';
+import Content from './_/Content';
 
 export default class Showcase extends React.Component {
   render() {
@@ -15,7 +15,7 @@ export default class Showcase extends React.Component {
         flex={1}
         alignVertical='center'
       >
-        <ContentAnimation />
+        <Content />
       </View>
     )
   }

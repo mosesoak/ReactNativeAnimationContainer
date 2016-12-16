@@ -7,6 +7,9 @@ import {
   Easing,
 } from 'react-native'
 
+import { observer } from 'mobx-react/native';
+import ShowcaseAnimationStore from 'stores/ShowcaseAnimationStore'
+
 import View from 'constelation-View';
 
 import ButtonComponent from './_/ButtonComponent';
@@ -14,11 +17,16 @@ import ImageComponent from './_/ImageComponent';
 
 // This content class receives its animations from above, like manna from heaven
 
+@observer
 export default class Content extends React.Component {
   static propTypes = {
-    starsLogoAnimationStyle: PropTypes.any,
-    starsCaptionAnimationStyle: PropTypes.any,
   };
+
+  // animation triggers
+
+  componentWillMount = () => {
+    ShowcaseAnimationStore.doIntro()
+  }
 
   render() {
     console.log("Child render")
@@ -37,7 +45,7 @@ export default class Content extends React.Component {
               width: 100,
               height: 100,
             },
-            this.props.starsLogoAnimationStyle,
+            ShowcaseAnimationStore.starsLogoAnimationStyle,
           ]}
           source={require('images/logo.png')}
         />
@@ -45,20 +53,20 @@ export default class Content extends React.Component {
         <Animated.Text
           // this piece of content lives in this class
           color='black'
-          style={[{padding: 20}, this.props.starsCaptionAnimationStyle]}
+          style={[{padding: 20}, ShowcaseAnimationStore.starsCaptionAnimationStyle]}
         >
-          Some Animated Text
+          This example keeps animations in a mobx store.
         </Animated.Text>
 
         <ImageComponent
           // this piece of content is a subcomponent
-          instrumentLogoAnimationStyle={this.props.instrumentLogoAnimationStyle}
+          instrumentLogoAnimationStyle={ShowcaseAnimationStore.instrumentLogoAnimationStyle}
         />
 
         <ButtonComponent
           // this piece of content is a subcomponent
-          buttonAnimationStyle={this.props.buttonAnimationStyle}
-          onPress={this.props.startOutro}
+          buttonAnimationStyle={ShowcaseAnimationStore.buttonAnimationStyle}
+          onPress={ShowcaseAnimationStore.doOutro}
         />
 
       </View>

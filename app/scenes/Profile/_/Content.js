@@ -47,7 +47,7 @@ export default class Content extends React.Component {
           color='black'
           style={[{padding: 20}, this.props.starsCaptionAnimationStyle]}
         >
-          Some Animated Text
+          This example keeps animations in a container.
         </Animated.Text>
 
         <ImageComponent

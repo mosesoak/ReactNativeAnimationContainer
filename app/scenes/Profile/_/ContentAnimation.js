@@ -7,17 +7,6 @@ import {
   Easing,
 } from 'react-native'
 
-/*
-This can be used to check what's going over the bridge.
-Animated hasn't been upgraded for useNativeDriver: true yet in most cases, so you'll see
-lots of  "JS->N : UIManager.updateView(...)" calls in most cases.
-Leaving this here so we can double-check that piping animation styles down to
-subcomponents doesn't lead to additional inefficiency.
-
-import MessageQueue from 'MessageQueue';
-MessageQueue.spy(true);
-*/
-
 import View from 'constelation-View'
 
 import Content from './Content'
@@ -89,19 +78,19 @@ export default class ContentAnimation extends React.Component {
     Animated.timing(this.animVal2, {
       toValue: 1,
       easing: Easing.out(Easing.quad),
-      duration: 1000,
-      delay: 600,
+      duration: 300,
+      delay: 300,
     }).start()
 
     Animated.timing(this.animVal3, {
       toValue: 1,
       easing: Easing.out(Easing.quad),
-      duration: 1000,
-      delay: 600,
+      duration: 300,
+      delay: 300,
     }).start()
 
     Animated.sequence([
-      Animated.delay(1500),
+      Animated.delay(500),
       Animated.spring(this.animVal4, {
         toValue: 1,
         velocity: 4,
@@ -124,14 +113,14 @@ export default class ContentAnimation extends React.Component {
     Animated.timing(this.animVal2, {
       toValue: 0,
       easing: Easing.in(Easing.quad),
-      duration: 1000,
+      duration: 300,
       delay: 400,
     }).start()
 
     Animated.timing(this.animVal3, {
       toValue: 2,
       easing: Easing.in(Easing.quad),
-      duration: 1000,
+      duration: 300,
       delay: 400,
     }).start()
 
@@ -139,7 +128,7 @@ export default class ContentAnimation extends React.Component {
       toValue: 0,
       easing: Easing.in(Easing.quad),
       duration: 400,
-      delay: 1200,
+      delay: 600,
     }).start()
   }
 

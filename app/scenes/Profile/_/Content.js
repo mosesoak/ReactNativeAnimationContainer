@@ -13,6 +13,7 @@ import ButtonComponent from './_/ButtonComponent';
 import ImageComponent from './_/ImageComponent';
 
 // This content class receives its animations from above, like manna from heaven
+// (No magic here yet - just passing styles down as props.)
 
 export default class Content extends React.Component {
   static propTypes = {

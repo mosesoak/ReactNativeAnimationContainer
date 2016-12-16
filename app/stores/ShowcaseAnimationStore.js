@@ -7,6 +7,10 @@ import {
   Easing,
 } from 'react-native'
 
+// Experimenting with storing animations in a mobx store.
+// Doesn't feel right to me - it's located too far from the component it acts on
+// and view styles don't feel appropriate to manage here
+
 class ShowcaseAnimationStore {
 
   // raw values

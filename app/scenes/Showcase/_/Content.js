@@ -15,7 +15,9 @@ import View from 'constelation-View';
 import ButtonComponent from './_/ButtonComponent';
 import ImageComponent from './_/ImageComponent';
 
-// This content class receives its animations from above, like manna from heaven
+// Experimenting with storing animations in a mobx store.
+// Doesn't feel right to me - it's located too far from the component it acts on
+// and view styles don't feel appropriate to manage here
 
 @observer
 export default class Content extends React.Component {

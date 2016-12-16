@@ -10,6 +10,7 @@ import Dummy from './Dummy'
 import Home from './Home'
 import Profile from './Profile'
 import Showcase from './Showcase'
+import Magic from './Magic'
 
 const showcaseIconSource = require( 'images/icon-bonfire.png' )
 
@@ -50,6 +51,8 @@ export default Actions.create(
         </Scene>
 
         <Scene key='showcase' component={Showcase} title='Showcase' icon={ImageIcon} imageSource={showcaseIconSource} />
+
+        <Scene key='magic' component={Magic} title='Magic' icon={ImageIcon} imageSource={showcaseIconSource} />
       </Scene>
 
       <Scene key='fullModal' component={Dummy} direction='vertical' hideNavBar />

@@ -14,6 +14,8 @@ import Animated_ from 'lib/AnimationContainer/Animated_'
 import ButtonComponent from './_/ButtonComponent';
 import ImageComponent from './_/ImageComponent';
 
+const AnimatedView = Animated.createAnimatedComponent(View)
+
 // This content class receives its animations from above, like manna from heaven
 
 export default class Content extends React.Component {
@@ -23,54 +25,51 @@ export default class Content extends React.Component {
   };
 
   render() {
-    console.log("Child render")
     return (
       <View
         flexGrow={1}
         align='center'
         justify='center'
         >
-        <Animated.Image
-          // this piece of content lives in this class
-          style={[
-            {
+
+        {/* These pieces of content live in this class */}
+
+        <Animated_ animationKey='starsLogo'>
+          <Animated.Image
+            style={{
               width: 100,
               height: 100,
-            },
-            this.props.starsLogoAnimationStyle,
-          ]}
-          source={require('images/logo.png')}
-          />
-
-        <Style_
-          backgroundColor='red'
-          >
-          <Animated_.View
-            width={200}
-            height={25}
-            animationKey='redRectangleView'
+            }}
+            source={require('images/logo.png')}
             />
-        </Style_>
+        </Animated_>
 
-        <Animated.Text
-          // this piece of content lives in this class
-          color='black'
-          style={[{padding: 20}, this.props.starsCaptionAnimationStyle]}
-          >
-          This example keeps animations in a container.
-        </Animated.Text>
+        <Animated_ animationKey='redRectangleView'>
+          <Style_
+            backgroundColor='red'
+            >
+            <AnimatedView
+              width={200}
+              height={25}
+              />
+          </Style_>
+        </Animated_>
 
-        <ImageComponent
-          // this piece of content is a subcomponent
-          instrumentLogoAnimationStyle={this.props.instrumentLogoAnimationStyle}
-          />
+        <Animated_ animationKey='starsCaption'>
+          <Animated.Text
+            color='black'
+            style={{padding: 20}}
+            >
+            This example keeps animations in a container.
+          </Animated.Text>
+        </Animated_>
 
-        <ButtonComponent
-          // this piece of content is a subcomponent
-          buttonAnimationStyle={this.props.buttonAnimationStyle}
-          onPress={this.props.startOutro}
-          />
+        {/* These pieces of content are subcomponents, each declares its own animationKey */}
 
+        <ImageComponent />
+
+        <ButtonComponent onPress={this.props.startOutro} />
+        
       </View>
     );
   }

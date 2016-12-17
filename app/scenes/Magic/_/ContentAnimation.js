@@ -15,13 +15,8 @@ import { animatedStylesByKey } from 'lib/AnimationContainer/Animated_'
 
 // Animation wrapper around Content
 
+// @animationContainer –– coming soon, hopefully...
 export default class ContentAnimation extends React.Component {
-  static propTypes = {
-  }
-
-  static defaultProps = {
-  }
-
   static childContextTypes = {
     [animatedStylesByKey]: PropTypes.object,
   }
@@ -31,6 +26,9 @@ export default class ContentAnimation extends React.Component {
       [animatedStylesByKey]: {
         'starsLogo': this.starsLogoAnimationStyle,
         'redRectangleView': this.starsLogoAnimationStyle,
+        'starsCaption': this.starsCaptionAnimationStyle,
+        'instrumentLogo': this.instrumentLogoAnimationStyle,
+        'button': this.buttonAnimationStyle,
       },
     };
   }
@@ -148,23 +146,8 @@ export default class ContentAnimation extends React.Component {
   }
 
   render() {
-    console.log("Content render")
-    for (let o in this) {
-      if (this[o] instanceof Animated.Value)
-      console.log(o)
-    }
     return (
-      <View
-        flexGrow={1}
-      >
-      <Content
-        starsLogoAnimationStyle={this.starsLogoAnimationStyle}
-        starsCaptionAnimationStyle={this.starsCaptionAnimationStyle}
-        instrumentLogoAnimationStyle={this.instrumentLogoAnimationStyle}
-        buttonAnimationStyle={this.buttonAnimationStyle}
-        startOutro={this.handleStartOutro}
-        />
-      </View>
+      <Content startOutro={this.handleStartOutro} />
     )
   }
 }

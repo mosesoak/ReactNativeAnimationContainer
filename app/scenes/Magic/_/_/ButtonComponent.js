@@ -8,6 +8,8 @@ import {
   TouchableOpacity,
 } from 'react-native'
 
+import Animated_ from 'lib/AnimationContainer/Animated_'
+
 export default class ButtonComponent extends React.Component {
   static propTypes = {
     buttonAnimationStyle: PropTypes.any,
@@ -15,22 +17,23 @@ export default class ButtonComponent extends React.Component {
   };
 
   render() {
-    console.log("ButtonComponent render")
     return (
-      <Animated.View
-        style={[
-          this.props.buttonAnimationStyle,
-          styles.button,
-        ]}
-      >
-        <TouchableOpacity
-          onPress={this.props.onPress}
+      <Animated_ animationKey='button'>
+        <Animated.View
+          style={[
+            this.props.buttonAnimationStyle,
+            styles.button,
+          ]}
         >
-          <Text color='black'>
-            Je Suis un Button
-          </Text>
-        </TouchableOpacity>
-      </Animated.View>
+          <TouchableOpacity
+            onPress={this.props.onPress}
+          >
+            <Text color='black'>
+              Je Suis un Button
+            </Text>
+          </TouchableOpacity>
+        </Animated.View>
+      </Animated_>
     );
   }
 }
